@@ -1,0 +1,18 @@
+name: Print Hello File
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  print-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show hello.txt
+        run: |
+          echo "===== hello.txt content ====="
+          cat hello.txt
+          echo "============================="
